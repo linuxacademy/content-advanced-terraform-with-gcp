@@ -1,0 +1,1 @@
+This repo is for the "Advanced Terraform with GCP" course on A Cloud Guru.
