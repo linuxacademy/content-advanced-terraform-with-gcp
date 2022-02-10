@@ -11,12 +11,12 @@ terraform {
 module "vm_1" {
     source = "./modules/vm"
 
-    name = "Test-1"
+    name = "test-1"
 }
 
 module "vm_2" {
     source = "./modules/vm"
 
-    name = "Test-2"
-    machine = "n1-standard"
+    name = "test-2"
+    machine = "n2-standard-2"
 }
