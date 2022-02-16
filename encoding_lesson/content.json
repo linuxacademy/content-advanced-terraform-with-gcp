@@ -1,0 +1,24 @@
+{
+    "content": [
+        {
+            "content_name": "Understanding the Terraform Block",
+            "type": "lesson",
+            "course": "Advanced Terraform with GCP"
+        },
+        {
+            "content_name": "Managing Multiple Environments with Terraform",
+            "type": "lesson",
+            "course": "Advanced Terraform with GCP"
+        },
+        {
+            "content_name": "Going Beyond Resources in Terraform Syntax",
+            "type": "lesson",
+            "course": "Advanced Terraform with GCP"
+        },
+        {
+            "content_name": "Using Terraform Community Modules for GCP",
+            "type": "lab",
+            "course": "Advanced Terraform with GCP"
+        }
+    ]
+}
