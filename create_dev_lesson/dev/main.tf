@@ -7,12 +7,12 @@ terraform {
     }
   }
   backend "gcs" {
-      bucket = "ci-with-tf-10002"
+      bucket = ""
       prefix = "terraform/dev"
   }
 }
 provider "google" {
-  project = "ci-with-tf-10002"
+  project = ""
 }
 module "dev_cluster" {
     source = "../modules/gke"
