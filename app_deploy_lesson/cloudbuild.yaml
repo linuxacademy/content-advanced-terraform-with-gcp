@@ -1,0 +1,48 @@
+steps: 
+- id: "Validate"
+  name: 'hashicorp/terraform:1.0.11'
+  entrypoint: 'sh'
+  args:
+  - '-c'
+  - |
+      if [ -d "$BRANCH_NAME/" ]; then
+        cd $BRANCH_NAME
+        terraform init -backend=false
+        terraform validate
+      else
+        cd dev
+        terraform init -backend=false
+        terraform validate
+      fi
+- id: "Plan"
+  name: 'hashicorp/terraform:1.0.11'
+  entrypoint: 'sh'
+  args:
+  - '-c'
+  - |
+      if [ -d "$BRANCH_NAME/" ]; then
+        cd $BRANCH_NAME
+        terraform init
+        terraform plan
+      else
+        cd dev
+        terraform init
+        terraform plan
+      fi
+- id: "Apply"
+  name: 'hashicorp/terraform:1.0.11'
+  entrypoint: 'sh'
+  args:
+  - '-c'
+  - |
+      if [ -d "$BRANCH_NAME/" ]; then
+        cd $BRANCH_NAME
+        terraform init
+        terraform apply -auto-approve
+      else
+        cd dev
+        terraform init
+        terraform apply -auto-approve
+      fi
+options:
+  logging: CLOUD_LOGGING_ONLY
